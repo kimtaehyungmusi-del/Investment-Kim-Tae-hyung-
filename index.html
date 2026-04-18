@@ -12,7 +12,6 @@ body {
   color: white;
 }
 
-/* Header */
 header {
   background: #111827;
   padding: 15px;
@@ -21,7 +20,6 @@ header {
   font-size: 20px;
 }
 
-/* Banner */
 .banner {
   background: url('https://picsum.photos/800/300') no-repeat center/cover;
   padding: 60px 20px;
@@ -35,7 +33,6 @@ header {
   border-radius: 8px;
 }
 
-/* Card */
 .card {
   background: #1f2937;
   margin: 20px;
@@ -53,7 +50,17 @@ header {
   color: red;
 }
 
-/* Buttons */
+.info {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #facc15;
+}
+
+.stats {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
 button {
   padding: 10px;
   margin: 5px;
@@ -63,7 +70,6 @@ button {
   cursor: pointer;
 }
 
-/* Sections */
 .section {
   padding: 20px;
 }
@@ -80,7 +86,6 @@ button {
   background: #1f2937;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -99,16 +104,20 @@ function setLang(lang) {
     document.getElementById("greet").innerText = "Hi Charial";
     document.getElementById("balance").innerText = "$100,000.00";
     document.getElementById("locked").innerText = "Funds locked to: Kim";
+    document.getElementById("depositAmt").innerText = "Deposit: $0.00";
+    document.getElementById("withdrawAmt").innerText = "Withdrawal: $0.00";
+    document.getElementById("info").innerText = 
+      "Note: Deposit $5,000 to unlock access to the $100,000 balance (demo only).";
     document.getElementById("demo").innerText = "Demo only - No real transactions";
-    document.getElementById("services").innerText = "Services";
-    document.getElementById("sponsored").innerText = "Sponsored";
   } else {
     document.getElementById("greet").innerText = "안녕하세요 Charial";
     document.getElementById("balance").innerText = "₩100,000";
     document.getElementById("locked").innerText = "자금 잠금 대상: Kim";
+    document.getElementById("depositAmt").innerText = "입금: ₩0";
+    document.getElementById("withdrawAmt").innerText = "출금: ₩0";
+    document.getElementById("info").innerText = 
+      "$100,000 잔액을 사용하려면 $5,000을 입금하세요 (데모 전용).";
     document.getElementById("demo").innerText = "데모 전용 - 실제 거래 없음";
-    document.getElementById("services").innerText = "서비스";
-    document.getElementById("sponsored").innerText = "광고";
   }
 }
 
@@ -141,30 +150,35 @@ function clickFeature(name) {
   HWARANG CAPITAL (화랑 캐피탈)
 </header>
 
-<!-- Banner -->
 <div class="banner">
   <h2>Invest Smart. Grow Strong.</h2>
 </div>
 
-<!-- Account Card -->
 <div class="card">
   <h2 id="greet">Hi Charial</h2>
   <div class="balance" id="balance">$100,000.00</div>
   <div class="locked" id="locked">Funds locked to: Kim</div>
 
+  <div class="stats">
+    <div id="depositAmt">Deposit: $0.00</div>
+    <div id="withdrawAmt">Withdrawal: $0.00</div>
+  </div>
+
+  <div class="info" id="info">
+    Note: Deposit $5,000 to unlock access to the $100,000 balance (demo only).
+  </div>
+
   <button onclick="deposit()">Deposit</button>
   <button onclick="withdraw()">Withdraw</button>
 </div>
 
-<!-- Language -->
 <div style="text-align:center;">
   <button onclick="setLang('en')">English</button>
   <button onclick="setLang('kr')">한국어</button>
 </div>
 
-<!-- Services -->
 <div class="section">
-  <h3 id="services">Services</h3>
+  <h3>Services</h3>
 
   <div class="feature" onclick="clickFeature('Investment Plans')">
     Investment Plans
@@ -177,20 +191,15 @@ function clickFeature(name) {
   <div class="feature" onclick="clickFeature('Crypto Trading')">
     Crypto Trading
   </div>
-
-  <div class="feature" onclick="clickFeature('Savings Account')">
-    Savings Account
-  </div>
 </div>
 
-<!-- Ads Section -->
 <div class="section">
-  <h3 id="sponsored">Sponsored</h3>
+  <h3>Sponsored</h3>
   <img src="https://picsum.photos/300/150" style="width:100%;border-radius:10px;">
 </div>
 
 <footer id="demo">
-  South Korea - military investment 
+  Demo only - No real transactions
 </footer>
 
 </body>
