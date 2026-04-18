@@ -12,7 +12,6 @@ body {
   color: white;
 }
 
-/* Header */
 header {
   background: #111827;
   padding: 15px;
@@ -21,9 +20,9 @@ header {
   font-size: 20px;
 }
 
-/* Banner */
+/* Military Banner */
 .banner {
-  background: url('https://picsum.photos/800/300') no-repeat center/cover;
+  background: url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc') no-repeat center/cover;
   padding: 60px 20px;
   text-align: center;
 }
@@ -35,7 +34,6 @@ header {
   border-radius: 8px;
 }
 
-/* Card */
 .card {
   background: #1f2937;
   margin: 20px;
@@ -53,7 +51,6 @@ header {
   color: red;
 }
 
-/* Buttons */
 button {
   padding: 10px;
   margin: 5px;
@@ -63,7 +60,6 @@ button {
   cursor: pointer;
 }
 
-/* Sections */
 .section {
   padding: 20px;
 }
@@ -80,7 +76,6 @@ button {
   background: #1f2937;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -100,32 +95,20 @@ function setLang(lang) {
     document.getElementById("balance").innerText = "$100,000.00";
     document.getElementById("locked").innerText = "Funds locked to: Kim";
     document.getElementById("demo").innerText = "Demo only - No real transactions";
-    document.getElementById("services").innerText = "Services";
-    document.getElementById("sponsored").innerText = "Sponsored";
   } else {
     document.getElementById("greet").innerText = "안녕하세요 Charial";
     document.getElementById("balance").innerText = "₩100,000";
     document.getElementById("locked").innerText = "자금 잠금 대상: Kim";
     document.getElementById("demo").innerText = "데모 전용 - 실제 거래 없음";
-    document.getElementById("services").innerText = "서비스";
-    document.getElementById("sponsored").innerText = "광고";
   }
 }
 
 function deposit() {
-  if (currentLang === "en") {
-    alert("Awaiting payment");
-  } else {
-    alert("결제 대기 중");
-  }
+  alert(currentLang === "en" ? "Awaiting payment" : "결제 대기 중");
 }
 
 function withdraw() {
-  if (currentLang === "en") {
-    alert("Invest first");
-  } else {
-    alert("먼저 투자하세요");
-  }
+  alert(currentLang === "en" ? "Invest first" : "먼저 투자하세요");
 }
 
 function clickFeature(name) {
@@ -141,12 +124,12 @@ function clickFeature(name) {
   HWARANG CAPITAL (화랑 캐피탈)
 </header>
 
-<!-- Banner -->
+<!-- Military Banner -->
 <div class="banner">
-  <h2>Invest Smart. Grow Strong.</h2>
+  <h2>Strength. Discipline. Growth.</h2>
 </div>
 
-<!-- Account Card -->
+<!-- Account -->
 <div class="card">
   <h2 id="greet">Hi Charial</h2>
   <div class="balance" id="balance">$100,000.00</div>
@@ -162,35 +145,24 @@ function clickFeature(name) {
   <button onclick="setLang('kr')">한국어</button>
 </div>
 
-<!-- Services -->
+<!-- Features -->
 <div class="section">
-  <h3 id="services">Services</h3>
+  <h3>Services</h3>
 
-  <div class="feature" onclick="clickFeature('Investment Plans')">
-    Investment Plans
-  </div>
-
-  <div class="feature" onclick="clickFeature('Loan Services')">
-    Loan Services
-  </div>
-
-  <div class="feature" onclick="clickFeature('Crypto Trading')">
-    Crypto Trading
-  </div>
-
-  <div class="feature" onclick="clickFeature('Savings Account')">
-    Savings Account
-  </div>
+  <div class="feature" onclick="clickFeature('Investment Plans')">Investment Plans</div>
+  <div class="feature" onclick="clickFeature('Loan Services')">Loan Services</div>
+  <div class="feature" onclick="clickFeature('Crypto Trading')">Crypto Trading</div>
 </div>
 
-<!-- Ads Section -->
+<!-- Sponsored Military Image -->
 <div class="section">
-  <h3 id="sponsored">Sponsored</h3>
-  <img src="https://picsum.photos/300/150" style="width:100%;border-radius:10px;">
+  <h3>Sponsored</h3>
+  <img src="https://images.unsplash.com/photo-1581090700227-4c4d2a7b9d0f"
+       style="width:100%;border-radius:10px;">
 </div>
 
 <footer id="demo">
-  South Korea Military platform 🇰🇷
+  South Korea - Military Investment 
 </footer>
 
 </body>
